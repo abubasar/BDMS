@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Server", "01.Server", "{47F811E0-63B8-4A00-94C6-762165CDCC97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Model", "03.Model", "{CF7F606A-FFD4-41E1-8726-C14B603E7B69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Service", "02.Service", "{AB3AE0E4-E0FB-4508-9D7C-AF1395F6B251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Repository", "04.Repository", "{A640D114-AD0D-41BA-89EA-5CEBC81E7265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Core", "05.Core", "{948FFAFB-3530-4D12-9BBF-E975144CAF8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.Shared", "Softcode.Bdms.Shared\Softcode.Bdms.Shared.csproj", "{218738F7-400A-4754-88C9-84DE44884280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.DataModel", "Softcode.Bdms.DataModel\Softcode.Bdms.DataModel.csproj", "{D5A0D693-8C84-4851-B904-42B9CBE2F66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.ViewModel", "Softcode.Bdms.ViewModel\Softcode.Bdms.ViewModel.csproj", "{BC4C0D9E-B16F-49FF-BF33-D75519363523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.RequestModel", "Softcode.Bdms.RequestModel\Softcode.Bdms.RequestModel.csproj", "{26C9B795-836A-49E4-9CD1-619E7F9CBFEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.ApplicationService", "Softcode.Bdms.ApplicationService\Softcode.Bdms.ApplicationService.csproj", "{066177B1-CD75-42F1-9550-1D7F69A533E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.Repository", "Softcode.Bdms.Repository\Softcode.Bdms.Repository.csproj", "{393C991E-466C-4E97-B16B-AD30F75E1C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Softcode.Bdms.Web.Api", "Softcode.Bdms.Web.Api\Softcode.Bdms.Web.Api.csproj", "{6BE5A91C-4431-48CB-8572-632749333B1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{218738F7-400A-4754-88C9-84DE44884280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218738F7-400A-4754-88C9-84DE44884280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218738F7-400A-4754-88C9-84DE44884280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218738F7-400A-4754-88C9-84DE44884280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A0D693-8C84-4851-B904-42B9CBE2F66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A0D693-8C84-4851-B904-42B9CBE2F66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A0D693-8C84-4851-B904-42B9CBE2F66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A0D693-8C84-4851-B904-42B9CBE2F66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4C0D9E-B16F-49FF-BF33-D75519363523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4C0D9E-B16F-49FF-BF33-D75519363523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4C0D9E-B16F-49FF-BF33-D75519363523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4C0D9E-B16F-49FF-BF33-D75519363523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C9B795-836A-49E4-9CD1-619E7F9CBFEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C9B795-836A-49E4-9CD1-619E7F9CBFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C9B795-836A-49E4-9CD1-619E7F9CBFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C9B795-836A-49E4-9CD1-619E7F9CBFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066177B1-CD75-42F1-9550-1D7F69A533E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066177B1-CD75-42F1-9550-1D7F69A533E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066177B1-CD75-42F1-9550-1D7F69A533E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066177B1-CD75-42F1-9550-1D7F69A533E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{393C991E-466C-4E97-B16B-AD30F75E1C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393C991E-466C-4E97-B16B-AD30F75E1C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393C991E-466C-4E97-B16B-AD30F75E1C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393C991E-466C-4E97-B16B-AD30F75E1C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE5A91C-4431-48CB-8572-632749333B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE5A91C-4431-48CB-8572-632749333B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE5A91C-4431-48CB-8572-632749333B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE5A91C-4431-48CB-8572-632749333B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{218738F7-400A-4754-88C9-84DE44884280} = {948FFAFB-3530-4D12-9BBF-E975144CAF8B}
+		{D5A0D693-8C84-4851-B904-42B9CBE2F66B} = {CF7F606A-FFD4-41E1-8726-C14B603E7B69}
+		{BC4C0D9E-B16F-49FF-BF33-D75519363523} = {CF7F606A-FFD4-41E1-8726-C14B603E7B69}
+		{26C9B795-836A-49E4-9CD1-619E7F9CBFEE} = {CF7F606A-FFD4-41E1-8726-C14B603E7B69}
+		{066177B1-CD75-42F1-9550-1D7F69A533E4} = {AB3AE0E4-E0FB-4508-9D7C-AF1395F6B251}
+		{393C991E-466C-4E97-B16B-AD30F75E1C5B} = {A640D114-AD0D-41BA-89EA-5CEBC81E7265}
+		{6BE5A91C-4431-48CB-8572-632749333B1A} = {47F811E0-63B8-4A00-94C6-762165CDCC97}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15DE6073-02EA-4095-8204-4BCDB9C1F048}
+	EndGlobalSection
+EndGlobal

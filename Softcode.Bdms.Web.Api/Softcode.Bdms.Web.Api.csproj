@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="2.2.2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Softcode.Bdms.ApplicationService\Softcode.Bdms.ApplicationService.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.DataModel\Softcode.Bdms.DataModel.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.Repository\Softcode.Bdms.Repository.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.RequestModel\Softcode.Bdms.RequestModel.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.Shared\Softcode.Bdms.Shared.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.ViewModel\Softcode.Bdms.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

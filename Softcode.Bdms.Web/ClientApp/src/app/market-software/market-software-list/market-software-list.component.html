@@ -1,0 +1,60 @@
+
+
+  <form>
+    <div class="form-inline">
+       <input class="form-control" type="text" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="Search By keyword">
+        &nbsp;
+       <input class="form-control" type="text" name="marketName" [(ngModel)]="searchRequest.marketName" (keypress)="search()" placeholder="Search By Market Name">
+    </div>
+  </form>
+
+
+  
+  <div class="container">
+    <div class="row">
+      <table class="table table-striprd">
+        <thead>
+            &nbsp;  <a href="#" class="btn btn-info btn-xs float-right"><b>+</b>Add New</a>
+          <tr>
+            <th (click)="sort('instituteId')">Institute Id</th>
+            <th (click)="sort('mkid')">MKid</th>
+            <th (click)="sort('marketName')">MarketName</th>
+            <th (click)="sort('decisionMaker')">DecisionMaker</th>
+            <th (click)="sort('designation')">Designation</th>
+            <th (click)="sort('district')">District</th>
+            <th (click)="sort('address')">Address</th>
+            <th (click)="sort('email')">Email</th>
+            <th (click)="sort('mobile')">Mobile</th>
+            <th (click)="sort('telephone')">Telephone</th>
+            <th (click)="sort('website')">Website</th>
+            <th (click)="sort('remarks')">Remarks</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of models">
+            <td>{{s.instituteId}}</td>
+            <td>{{s.mkid}}</td>
+            <td>{{s.marketName}}</td>
+            <td>{{s.decisionMaker}}</td>
+            <td>{{s.designation}}</td>
+            <td>{{s.district}}</td>
+            <td>{{s.address}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.mobile}}</td>
+            <td>{{s.telephone}}</td>
+            <td>{{s.website}}</td>
+            <td>{{s.remarks}}</td>
+            <td><a href="" class="btn btn-info xs">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+  <button class="btn btn-primary" (show)="searchRequest.page>1" (click)="previous()">Previous</button>
+  <label>Current Page:{{searchRequest.page}}</label>
+  <button class="btn btn-primary" (click)="next()">Next</button>
+  

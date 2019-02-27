@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Softcode.Bdms.Repository\Softcode.Bdms.Repository.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.RequestModel\Softcode.Bdms.RequestModel.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.ViewModel\Softcode.Bdms.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
