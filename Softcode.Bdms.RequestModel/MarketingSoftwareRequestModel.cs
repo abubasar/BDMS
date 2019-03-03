@@ -1,6 +1,9 @@
-﻿using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
+﻿using Microsoft.EntityFrameworkCore;
+using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
+using Softcode.Bdms.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -9,6 +12,17 @@ namespace Softcode.Bdms.RequestModel
     public class MarketingSoftwareRequestModel : BaseRequestModel<MarketSoftware>
     {
         public string MarketName { get; set; }
+
+        public override Expression<Func<MarketSoftware, DropdownViewModel>> Dropdown()
+        {
+            return x => new DropdownViewModel()
+            {
+                Id = x.StatusId,
+                Text = x.Status.StatusName,
+                Data = new { x.StatusId, x.Status.StatusName }
+            };
+        }
+
         public override Expression<Func<MarketSoftware, bool>> GetExpression()
         {
             if (!string.IsNullOrWhiteSpace(this.Keyword))
@@ -22,6 +36,11 @@ namespace Softcode.Bdms.RequestModel
             }
 
             return this.ExpressionObject;
+        }
+
+        public override IQueryable<MarketSoftware> IncludeParents(IQueryable<MarketSoftware> queryable)
+        {
+            return queryable.Include(x => x.Status);
         }
     }
 }

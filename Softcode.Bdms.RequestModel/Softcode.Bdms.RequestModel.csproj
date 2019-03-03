@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Softcode.Bdms.DataModel\Softcode.Bdms.DataModel.csproj" />
+    <ProjectReference Include="..\Softcode.Bdms.ViewModel\Softcode.Bdms.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

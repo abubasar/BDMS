@@ -13,6 +13,8 @@ import { MarketSoftwareListComponent } from './market-software/market-software-l
 import { BaseService } from './service/base.service';
 import { UrlService } from './service/url.service';
 import { MarketSoftwareService } from './service/market-software.service';
+import { SaveMarketSoftwareComponent } from './market-software/save-market-software/save-market-software.component';
+import { MarketingStatusService } from './service/marketing-status.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { MarketSoftwareService } from './service/market-software.service';
     CounterComponent,
     FetchDataComponent,
     MarketSoftwareListComponent,
+    SaveMarketSoftwareComponent,
    
   ],
   imports: [
@@ -31,13 +34,15 @@ import { MarketSoftwareService } from './service/market-software.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      {path:'list',component:MarketSoftwareListComponent}
+      {path:'list',component:MarketSoftwareListComponent},
+      {path:'add',component:SaveMarketSoftwareComponent}
     ])
   ],
   providers: [
     BaseService,
     UrlService,
-    MarketSoftwareService
+    MarketSoftwareService,
+    MarketingStatusService
   ],
   bootstrap: [AppComponent]
 })

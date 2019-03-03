@@ -1,5 +1,6 @@
 ﻿using Softcode.Bdms.Repository;
 using Softcode.Bdms.RequestModel;
+using Softcode.Bdms.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Softcode.Bdms.ApplicationService
         public IQueryable<T> SearchQueryable(BaseRequestModel<T> request)
         {
             IQueryable<T> queryable = repository.Get();
+            queryable = request.IncludeParents(queryable);
             var expression = request.GetExpression();
             queryable = queryable.Where(expression);
             queryable = request.OrderByFunc()(queryable);
@@ -26,6 +28,8 @@ namespace Softcode.Bdms.ApplicationService
 
             return queryable;
         }
+
+        
 
         public bool Add(T model)
         {
@@ -60,6 +64,14 @@ namespace Softcode.Bdms.ApplicationService
         private static Tv CreateVmInstance(T x)
         {
             return (Tv)Activator.CreateInstance(typeof(Tv), x);
+        }
+
+        public HashSet<DropdownViewModel> GetDropdownList(Tr request)
+        {
+            IQueryable<T> queryable = repository.Get();
+            queryable = request.OrderByFunc()(queryable);
+            HashSet<DropdownViewModel> list = queryable.Select(request.Dropdown()).ToHashSet();
+            return list;
         }
 
     }

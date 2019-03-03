@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Softcode.Bdms.ApplicationService;
+using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
 using Softcode.Bdms.RequestModel;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,13 @@ namespace Softcode.Bdms.Web.Api.Controllers
 
             var add = service.Add(model);
             return Ok(add);
+        }
+        [Route("dropdown")]
+        [HttpPost]
+        public IActionResult Dropdown(Tr request)
+        {
+                var content = service.GetDropdownList(request);
+                return Ok(content);
         }
 
     }

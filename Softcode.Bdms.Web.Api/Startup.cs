@@ -40,7 +40,7 @@ namespace Softcode.Bdms.Web.Api
 
             services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,,>));
-           
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

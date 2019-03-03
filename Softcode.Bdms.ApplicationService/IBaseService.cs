@@ -1,4 +1,5 @@
 ﻿using Softcode.Bdms.RequestModel;
+using Softcode.Bdms.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Softcode.Bdms.ApplicationService
         bool Add(T model);
         Tv Detail(string id);
         List<Tv> Search(Tr request);
-        
-
+        HashSet<DropdownViewModel> GetDropdownList(Tr request);
+       
     }
 }

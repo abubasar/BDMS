@@ -10,14 +10,12 @@ using System.Threading.Tasks;
 
 namespace Softcode.Bdms.Web.Api.Controllers
 {
-    [Route("api/market-software")]
-    public class MarketSoftwareController : BaseController<MarketSoftware, MarketingSoftwareRequestModel, MarketSoftwareViewModel>
+    [Route("api/market-status")]
+    public class MarketingStatusController : BaseController<MarketingStatus, MarketingStatusRequestModel, MarketSoftwareViewModel>
 
     {
-        public MarketSoftwareController(IBaseService<MarketSoftware, MarketingSoftwareRequestModel, MarketSoftwareViewModel> service) : base(service)
-        {
-        }
-       
+
+
         //[Route("search-market-software")]
         //public IActionResult SearchMarketSoftware([FromBody]MarketingSoftwareRequestModel model)
         //{
@@ -41,5 +39,8 @@ namespace Softcode.Bdms.Web.Api.Controllers
         //{
         //    return base.DELETE(model);
         //}
+        public MarketingStatusController(IBaseService<MarketingStatus, MarketingStatusRequestModel, MarketSoftwareViewModel> service) : base(service)
+        {
+        }
     }
 }

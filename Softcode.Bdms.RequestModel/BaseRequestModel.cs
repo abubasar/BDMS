@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Softcode.Bdms.ViewModel;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -56,8 +57,10 @@ namespace Softcode.Bdms.RequestModel
         }
 
 
-
+        public abstract IQueryable<T> IncludeParents(IQueryable<T> queryable);
+        public abstract Expression<Func<T,DropdownViewModel>> Dropdown();
 
         public abstract Expression<Func<T, bool>> GetExpression();
+
     }
 }

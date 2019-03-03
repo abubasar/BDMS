@@ -5,8 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class UrlService {
   baseUrl:string="http://localhost:12666/api/"
-  marketsoftware:string
+  marketsoftware:string;
     constructor() { 
       this.marketsoftware=this.baseUrl+"market-software"
+     
     }
 }
