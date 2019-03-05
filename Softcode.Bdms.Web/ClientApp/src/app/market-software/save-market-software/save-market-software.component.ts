@@ -3,7 +3,8 @@ import { BaseComponent } from 'src/app/base/base.component';
 import { MarketSoftware } from 'src/app/market-software';
 import { MarketSoftwareService } from 'src/app/service/market-software.service';
 import { MarketingStatusService } from 'src/app/service/marketing-status.service';
-import { BaseRequestModel } from 'src/app/base-request-model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MarketingStatus } from 'src/app/marketing-status';
 
 @Component({
   selector: 'app-save-market-software',
@@ -11,31 +12,26 @@ import { BaseRequestModel } from 'src/app/base-request-model';
   styleUrls: ['./save-market-software.component.css']
 })
 export class SaveMarketSoftwareComponent extends BaseComponent<MarketSoftware> implements OnInit {
-  statuses:any[]
-  searchRequest:BaseRequestModel
-  constructor(service:MarketSoftwareService,private marketingStatusService:MarketingStatusService) {
-    super(service);
-    this.model=new MarketSoftware();
-    this.searchRequest=new BaseRequestModel();
-    this.searchRequest.page=1
-    this.searchRequest.perPageCount=10
-    this.searchRequest.orderBy="statusName"
-    this.searchRequest.isAscending=false;
+  statuses:MarketingStatus[]
+  constructor(service:MarketSoftwareService,activatedRoute:ActivatedRoute,router:Router,private statusService:MarketingStatusService) {
+    super(service,activatedRoute,router);
+   
   }
 
   ngOnInit() {
-   this.loadMarketSoftwareStatus();
+   this.loadStatus();
   }
 
-  loadMarketSoftwareStatus():void{
-    this.marketingStatusService.getAllStatusForDropdown(this.searchRequest).subscribe(res=>{
+  loadStatus():void{
+    this.statusService.load(this.searchRequest).subscribe(res=>{
       this.statuses=res;
       console.log(res)
       });
-  }
+
+    }
 
   reset():void {
-    this.model=new MarketSoftware();
+    
  
   }
 

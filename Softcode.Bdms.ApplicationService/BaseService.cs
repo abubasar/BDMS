@@ -1,4 +1,5 @@
-﻿using Softcode.Bdms.Repository;
+﻿using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
+using Softcode.Bdms.Repository;
 using Softcode.Bdms.RequestModel;
 using Softcode.Bdms.ViewModel;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 
 namespace Softcode.Bdms.ApplicationService
 {
-    public class BaseService<T, Tr, Tv>:IBaseService<T,Tr,Tv> where T : class where Tr : BaseRequestModel<T> where Tv : class
+    public class BaseService<T, Tr, Tv>:IBaseService<T,Tr,Tv> where T : BaseEntity where Tr : BaseRequestModel<T> where Tv : BaseViewModel<T>
     {
 
         private readonly IBaseRepository<T> repository;
@@ -37,7 +38,25 @@ namespace Softcode.Bdms.ApplicationService
             return repository.Add(model);
         }
 
-        public Tv Detail(string id)
+        public bool Edit(T model)
+        {
+
+            return repository.Edit(model);
+        }
+
+        public T GetById(int id)
+        {
+
+            return repository.GetDetail(id);
+        }
+
+        public bool Delete(int id)
+        {
+
+            return repository.Delete(id);
+        }
+
+        public Tv Detail(int id)
         {
             T x = repository.GetDetail(id);
             if (x == null)

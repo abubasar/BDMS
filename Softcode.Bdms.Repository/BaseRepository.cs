@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
 namespace Softcode.Bdms.Repository
 {
-    public class BaseRepository<T>:IBaseRepository<T> where T : class
+    public class BaseRepository<T>:IBaseRepository<T> where T : BaseEntity
     {
        private readonly MarketingDbContext context;
         public BaseRepository(MarketingDbContext context)
@@ -29,7 +29,7 @@ namespace Softcode.Bdms.Repository
             return dbSet.AsQueryable();
         }
 
-        public T GetDetail(string id)
+        public T GetDetail(int id)
         {
             return this.context.Set<T>().Find(id);
 
@@ -42,7 +42,7 @@ namespace Softcode.Bdms.Repository
             return i > 0;
         }
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             var entity = GetDetail(id);
             if (entity != null)

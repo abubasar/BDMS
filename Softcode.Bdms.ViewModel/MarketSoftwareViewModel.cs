@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Softcode.Bdms.ViewModel
 {
-  public class MarketSoftwareViewModel
+  public class MarketSoftwareViewModel:BaseViewModel<MarketSoftware>
     {
-        public MarketSoftwareViewModel(MarketSoftware marketSoftware)
+        
+        public MarketSoftwareViewModel(MarketSoftware marketSoftware):base(marketSoftware)
         {
             InstituteId = marketSoftware.InstituteId;
             Mkid = marketSoftware.Mkid;
@@ -21,6 +22,8 @@ namespace Softcode.Bdms.ViewModel
             Email = marketSoftware.Email;
             WebSite = marketSoftware.WebSite;
             Remarks = marketSoftware.Remarks;
+            StatusName = marketSoftware.Status.StatusName;
+            CreatedBy = marketSoftware.CreatedBy;
         }
         public int InstituteId { get; set; }
         public string Mkid { get; set; }
@@ -33,6 +36,7 @@ namespace Softcode.Bdms.ViewModel
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string WebSite { get; set; }
+        public string StatusName { get; set; }
         public string Remarks { get; set; }
         
     }

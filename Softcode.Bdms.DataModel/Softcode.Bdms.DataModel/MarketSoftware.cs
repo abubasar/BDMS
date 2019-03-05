@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Softcode.Bdms.DataModel.Softcode.Bdms.DataModel
 {
-    public partial class MarketSoftware
+    public partial class MarketSoftware:BaseEntity
     {
         [Key]
         public int InstituteId { get; set; }

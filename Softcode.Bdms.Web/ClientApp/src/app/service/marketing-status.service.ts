@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { UrlService } from './url.service';
 import { Observable } from 'rxjs';
 import { BaseRequestModel } from '../base-request-model';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MarketingStatusService {
+export class MarketingStatusService extends BaseService<any>  {
 
-  constructor(private http:HttpClient) {
+  constructor(http:HttpClient,url:UrlService) {
+ super(http,url.marketstatus)
+   }
 
-   }
-   private baseUrl:string="http://localhost:12666/api/"
-   getAllStatusForDropdown(request:BaseRequestModel):Observable<any>{
-     return this.http.post(this.baseUrl+'market-status/'+'Dropdown',request);
-   }
+   
+  
 }

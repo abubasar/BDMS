@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Softcode.Bdms.DataModel.Softcode.Bdms.DataModel
 {
-    public partial class MarketingStatus
+    public partial class MarketingStatus:BaseEntity
     {
         public MarketingStatus()
         {

@@ -2,6 +2,7 @@
 using Softcode.Bdms.ApplicationService;
 using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
 using Softcode.Bdms.RequestModel;
+using Softcode.Bdms.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace Softcode.Bdms.Web.Api.Controllers
 {
     [ApiController]
-    public class BaseController<T,Tr,Tv>:ControllerBase where T:class where Tr:BaseRequestModel<T> where Tv:class
+    public class BaseController<T,Tr,Tv>:ControllerBase where T:BaseEntity where Tr:BaseRequestModel<T> where Tv:BaseViewModel<T>
     {
         private readonly IBaseService<T, Tr, Tv> service;
         public BaseController(IBaseService<T, Tr, Tv> service)
@@ -41,6 +42,20 @@ namespace Softcode.Bdms.Web.Api.Controllers
             var add = service.Add(model);
             return Ok(add);
         }
+
+        [HttpPut]
+        [Route("edit")]
+        public IActionResult PUT(T model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Bhai please sob field fill up koren");
+            }
+
+            var edit = service.Edit(model);
+            return Ok(edit);
+        }
         [Route("dropdown")]
         [HttpPost]
         public IActionResult Dropdown(Tr request)
@@ -49,5 +64,19 @@ namespace Softcode.Bdms.Web.Api.Controllers
                 return Ok(content);
         }
 
+        [Route("get/{id}")]
+        [HttpGet]
+        public IActionResult GET(int id)
+        {
+            var model = service.GetById(id);
+            return Ok(model);
+        }
+        [Route("delete/{id}")]
+        [HttpDelete]
+        public IActionResult DELETE(int id)
+        {
+            var deleted = service.Delete(id);
+            return Ok(deleted);
+        }
     }
 }

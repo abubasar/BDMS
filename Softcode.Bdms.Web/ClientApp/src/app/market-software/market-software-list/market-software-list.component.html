@@ -25,7 +25,8 @@
             <th (click)="sort('email')">Email</th>
             <th (click)="sort('mobile')">Mobile</th>
             <th (click)="sort('telephone')">Telephone</th>
-            <th (click)="sort('website')">Website</th>
+            <th (click)="sort('website')">WebSite</th>
+            <th (click)="sort('statusName')">Status</th>
             <th (click)="sort('remarks')">Remarks</th>
 
           </tr>
@@ -41,9 +42,11 @@
             <td>{{s.email}}</td>
             <td>{{s.mobile}}</td>
             <td>{{s.telephone}}</td>
-            <td>{{s.website}}</td>
+            <td>{{s.webSite}}</td>
+            <td>{{s.statusName}}</td>
             <td>{{s.remarks}}</td>
-            <td><a href="" class="btn btn-info xs">Edit</a></td>
+            <td> <a class="btn btn-primary" type="button" (click)="update(s.instituteId)">Edit</a></td>
+            <td> <button class="btn btn-danger" type="button" (click)="delete(s.instituteId)">Delete</button></td>
           </tr>
         </tbody>
       </table>
