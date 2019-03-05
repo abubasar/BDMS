@@ -35,7 +35,7 @@ get(){
 
 edit(){
   this.service.edit(this.model).subscribe(res=>{
-    this.router.navigate(['list']);
+   // this.router.navigate(['list']);
     this.reset();
     console.log('success');
   },error=>{

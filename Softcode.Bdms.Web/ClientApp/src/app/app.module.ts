@@ -16,6 +16,10 @@ import { MarketSoftwareService } from './service/market-software.service';
 import { SaveMarketSoftwareComponent } from './market-software/save-market-software/save-market-software.component';
 import { MarketingStatusService } from './service/marketing-status.service';
 import { EditMarketSoftwareComponent } from './market-software/edit-market-software/edit-market-software.component';
+import { MarketingInquiryListComponent } from './Marketing-Inquiry/marketing-inquiry-list/marketing-inquiry-list.component';
+import { MarketingInquiryService } from './service/marketing-inquiry.service';
+import { SaveMarketingInquiryComponent } from './Marketing-Inquiry/save-marketing-inquiry/save-marketing-inquiry.component';
+import { EditMarketingInquiryComponent } from './Marketing-Inquiry/edit-marketing-inquiry/edit-marketing-inquiry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +30,9 @@ import { EditMarketSoftwareComponent } from './market-software/edit-market-softw
     MarketSoftwareListComponent,
     SaveMarketSoftwareComponent,
     EditMarketSoftwareComponent,
+    MarketingInquiryListComponent,
+    SaveMarketingInquiryComponent,
+    EditMarketingInquiryComponent,
    
   ],
   imports: [
@@ -38,14 +45,18 @@ import { EditMarketSoftwareComponent } from './market-software/edit-market-softw
       { path: 'fetch-data', component: FetchDataComponent },
       {path:'list',component:MarketSoftwareListComponent},
       {path:'add',component:SaveMarketSoftwareComponent},
-      {path:'edit/:id',component:EditMarketSoftwareComponent}
+      {path:'edit/:id',component:EditMarketSoftwareComponent},
+      {path:'list-marketing-inquiry', component:MarketingInquiryListComponent},
+      {path:'save-marketing-inquiry', component:SaveMarketingInquiryComponent},
+      {path:'edit-marketing-inquiry/:id', component:EditMarketingInquiryComponent}
     ])
   ],
   providers: [
     BaseService,
     UrlService,
     MarketSoftwareService,
-    MarketingStatusService
+    MarketingStatusService,
+    MarketingInquiryService
   ],
   bootstrap: [AppComponent]
 })

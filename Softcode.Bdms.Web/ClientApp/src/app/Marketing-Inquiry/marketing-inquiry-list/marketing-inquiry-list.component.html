@@ -1,0 +1,56 @@
+<form>
+    <div class="form-inline">
+       <input class="form-control" type="text" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="Search By keyword">
+    </div>
+  </form>
+
+&nbsp;
+
+  <a href="/save-marketing-inquiry" class="btn btn-info btn-xs"><b>+</b>Add New</a>
+  <div class="container">
+      <div class="row">
+        <table class="table">
+          <thead>
+        
+    <tr>
+      <th (click)="sort('InquiryContactPerson')">Inquiry Contact Person</th>
+      <th (click)="sort('Mobile')">Mobile</th>
+      <th (click)="sort('InquiryDate')">Inquiry Date</th>
+      <th (click)="sort('Telephone')">Telephone</th>
+      <th (click)="sort('Email')">Email</th>
+      <th (click)="sort('FurtherContactType')">Further Contact Type</th>
+      <th (click)="sort('IsActive')">Is Active</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let model of models">
+      <td>{{model.inquiryContactPerson}}</td>
+      <td>{{model.mobile}}</td>
+     <td>
+       {{model.inquiryDate}}
+     </td>
+   
+     <td>{{model.telephone}}</td>
+     <td>{{model.email}}</td>
+     
+     <td>{{model.furtherContactType}}</td>
+     <td>{{model.isActive}}</td>
+     <td> 
+       <button class="btn btn-primary" type="button" (click)="update(model.inquiryId)">Edit</button>
+     </td>
+     <td>
+       <button style="float: right;" class="btn btn-danger" type="button" (click)="delete(model.inquiryId)">Delete</button>
+      </td>
+   </tr> 
+  </tbody>
+
+</table> 
+</div>
+</div>
+
+
+
+<button class="btn btn-primary" (show)="searchRequest.page>1" (click)="previous()">Previous</button>
+<label>Current Page:{{searchRequest.page}}</label>
+<button class="btn btn-primary" (click)="next()">Next</button>

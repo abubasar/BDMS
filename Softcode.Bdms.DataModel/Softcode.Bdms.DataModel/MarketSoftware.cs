@@ -25,5 +25,6 @@ namespace Softcode.Bdms.DataModel.Softcode.Bdms.DataModel
         public DateTime? Rdate { get; set; }
 
         public virtual MarketingStatus Status { get; set; }
+        public virtual List<MarketingInquiry> MarketingInquiry { get; set; }
     }
 }

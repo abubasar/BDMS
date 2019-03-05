@@ -14,6 +14,6 @@ namespace Softcode.Bdms.DataModel.Softcode.Bdms.DataModel
 
         public virtual DbSet<MarketSoftware> MarketSoftware { get; set; }
         public virtual DbSet<MarketingStatus> MarketingStatus { get; set; }
-
+        public virtual DbSet<MarketingInquiry> MarketingInquiry { get; set; }
     }
 }

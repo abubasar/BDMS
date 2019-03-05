@@ -15,12 +15,7 @@ namespace Softcode.Bdms.RequestModel
 
         public override Expression<Func<MarketSoftware, DropdownViewModel>> Dropdown()
         {
-            return x => new DropdownViewModel()
-            {
-                Id = x.StatusId,
-                Text = x.Status.StatusName,
-                Data = new { x.StatusId, x.Status.StatusName }
-            };
+            throw new NotImplementedException();
         }
 
         public override Expression<Func<MarketSoftware, bool>> GetExpression()

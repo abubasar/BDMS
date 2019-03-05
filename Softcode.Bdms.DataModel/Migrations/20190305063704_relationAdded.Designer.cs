@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
 
 namespace Softcode.Bdms.DataModel.Migrations
 {
     [DbContext(typeof(MarketingDbContext))]
-    partial class MarketingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190305063704_relationAdded")]
+    partial class relationAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,7 +78,7 @@ namespace Softcode.Bdms.DataModel.Migrations
 
                     b.Property<DateTime?>("InquiryDate");
 
-                    b.Property<int?>("InstituteId");
+                    b.Property<int>("InstituteId");
 
                     b.Property<bool>("IsActive");
 
@@ -120,7 +122,8 @@ namespace Softcode.Bdms.DataModel.Migrations
                 {
                     b.HasOne("Softcode.Bdms.DataModel.Softcode.Bdms.DataModel.MarketSoftware", "MarketSoftware")
                         .WithMany("MarketingInquiry")
-                        .HasForeignKey("InstituteId");
+                        .HasForeignKey("InstituteId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

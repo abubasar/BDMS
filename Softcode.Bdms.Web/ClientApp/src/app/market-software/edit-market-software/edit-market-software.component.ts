@@ -26,7 +26,7 @@ statuses:MarketingStatus[]
     this.loadStatus();
   }
   reset() {
-    throw new Error("Method not implemented.");
+    this.model=new MarketSoftware()
   }
 
   loadStatus():void{

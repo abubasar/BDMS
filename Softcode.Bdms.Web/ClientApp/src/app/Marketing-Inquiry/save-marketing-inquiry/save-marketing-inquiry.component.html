@@ -1,0 +1,72 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 offser-t-md-2">
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Add new Market Inquiry</h3>
+          </div>
+          <div class="card-body">
+            <form>
+             <div class="form-group">
+               <label for="inquiryDate">Inquiry Date</label>
+               <input type="text" id="inquiryDate" name="inquiryDate" [(ngModel)]="model.inquiryDate" class="form-control">
+             </div>
+  
+             <div class="form-group">
+              <label for="inquiryContactPerson">Inquiry Contact Person</label>
+              <input type="text" id="inquiryContactPerson" name="inquiryContactPerson" [(ngModel)]="model.inquiryContactPerson" class="form-control">
+            </div>
+  
+            <div class="form-group">
+              <label for="mobile">mobile</label>
+              <input type="text" id="mobile" name="mobile" [(ngModel)]="model.mobile" class="form-control">
+            </div>
+
+
+  
+            <div class="form-group">
+              <label for="telephone">Telephone</label>
+              <input type="text" id="telephone" name="telephone" [(ngModel)]="model.telephone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" [(ngModel)]="model.email" class="form-control">
+              </div>
+
+
+            <div class="form-group">
+              <label for="furtherContactType">FurtherContactType</label>
+              <input type="text" id="furtherContactType" name="furtherContactType" [(ngModel)]="model.furtherContactType" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="remarks">Remarks</label>
+              <input type="text" id="remarks" name="remarks" [(ngModel)]="model.remarks" class="form-control">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="IsActive" [(ngModel)]="model.IsActive">Is Active</label>
+          
+            </div>
+
+
+  
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-block btn-lg" (click)="save()">Save</button>
+            </div>
+            <br/>
+            <div class="text-right">
+                <a class="btn btn-primary btn-block" href="/list-marketing-inquiry">Back To List</a>
+              </div>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 

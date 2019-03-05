@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Softcode.Bdms.DataModel.Softcode.Bdms.DataModel;
 
 namespace Softcode.Bdms.DataModel.Migrations
 {
     [DbContext(typeof(MarketingDbContext))]
-    partial class MarketingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190305044452_MarketingInquiryAdded")]
+    partial class MarketingInquiryAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,8 +68,6 @@ namespace Softcode.Bdms.DataModel.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreatedBy");
-
                     b.Property<string>("Email");
 
                     b.Property<string>("FurtherContactType");
@@ -76,7 +76,7 @@ namespace Softcode.Bdms.DataModel.Migrations
 
                     b.Property<DateTime?>("InquiryDate");
 
-                    b.Property<int?>("InstituteId");
+                    b.Property<int>("InstituteId");
 
                     b.Property<bool>("IsActive");
 
@@ -87,8 +87,6 @@ namespace Softcode.Bdms.DataModel.Migrations
                     b.Property<string>("Telephone");
 
                     b.HasKey("InquiryId");
-
-                    b.HasIndex("InstituteId");
 
                     b.ToTable("MarketingInquiry");
                 });
@@ -114,13 +112,6 @@ namespace Softcode.Bdms.DataModel.Migrations
                         .WithMany("MarketSoftware")
                         .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Softcode.Bdms.DataModel.Softcode.Bdms.DataModel.MarketingInquiry", b =>
-                {
-                    b.HasOne("Softcode.Bdms.DataModel.Softcode.Bdms.DataModel.MarketSoftware", "MarketSoftware")
-                        .WithMany("MarketingInquiry")
-                        .HasForeignKey("InstituteId");
                 });
 #pragma warning restore 612, 618
         }
