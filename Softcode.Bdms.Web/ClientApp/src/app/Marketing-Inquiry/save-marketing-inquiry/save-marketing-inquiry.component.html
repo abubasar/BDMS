@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-md-8 offser-t-md-2">
+      <div class="col-md-10 offset-md-1">
         <div class="card card-default">
           <div class="card-header">
             <h3 class="card-title">Add new Market Inquiry</h3>
@@ -10,7 +10,7 @@
             <form>
              <div class="form-group">
                <label for="inquiryDate">Inquiry Date</label>
-               <input type="text" id="inquiryDate" name="inquiryDate" [(ngModel)]="model.inquiryDate" class="form-control">
+               <input type="text" id="inquiryDate" name="inquiryDate" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD MMM YYYY' }" [(ngModel)]="model.inquiryDate" class="form-control">
              </div>
   
              <div class="form-group">
@@ -37,7 +37,7 @@
 
 
             <div class="form-group">
-              <label for="furtherContactType">FurtherContactType</label>
+              <label for="furtherContactType">Further Contact Type</label>
               <input type="text" id="furtherContactType" name="furtherContactType" [(ngModel)]="model.furtherContactType" class="form-control">
             </div>
 

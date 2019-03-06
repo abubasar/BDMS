@@ -14,15 +14,14 @@
     <div class="row">
       <table class="table table">
         <thead>
-            &nbsp;  <a href="/add" class="btn btn-info btn-xs float-right"><b>+</b>Add New</a>
+            &nbsp;  <a href="/add" class="btn btn-info btn-xs float-right" (click)="getInstance()"><b>+</b>Add New</a>
           <tr>
             <th (click)="sort('instituteId')">Institute Id</th>
             <th (click)="sort('mkid')">MKid</th>
-            <th (click)="sort('marketName')">MarketName</th>
-            <th (click)="sort('decisionMaker')">DecisionMaker</th>
+            <th (click)="sort('marketName')">Market Name</th>
+            <th (click)="sort('decisionMaker')">Decision Maker</th>
             <th (click)="sort('designation')">Designation</th>
             <th (click)="sort('district')">District</th>
-            <th (click)="sort('email')">Email</th>
             <th (click)="sort('mobile')">Mobile</th>
             <th (click)="sort('telephone')">Telephone</th>
             <th (click)="sort('website')">WebSite</th>
@@ -39,14 +38,13 @@
             <td>{{s.decisionMaker}}</td>
             <td>{{s.designation}}</td>
             <td>{{s.district}}</td>
-            <td>{{s.email}}</td>
             <td>{{s.mobile}}</td>
             <td>{{s.telephone}}</td>
             <td>{{s.webSite}}</td>
             <td>{{s.statusName}}</td>
             <td>{{s.remarks}}</td>
-            <td> <a class="btn btn-primary" type="button" (click)="update(s.instituteId)">Edit</a></td>
-            <td> <button class="btn btn-danger" type="button" (click)="delete(s.instituteId)">Delete</button></td>
+            <td> <button class="btn btn-primary" type="button" (click)="update(s.instituteId)"><i class="fa fa-pencil"></i></button></td>
+            <td> <button class="btn btn-danger" type="button" (click)="delete(s.instituteId)"><i class="fa fa-remove"></i></button></td>
           </tr>
         </tbody>
       </table>

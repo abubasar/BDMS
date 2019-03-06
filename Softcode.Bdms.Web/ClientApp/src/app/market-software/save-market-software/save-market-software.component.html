@@ -1,20 +1,21 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 offser-t-md-2">
+    <div class="col-md-10 offset-md-1">
       <div class="card card-default">
         <div class="card-header">
           <h3 class="card-title">Add new Market Software</h3>
         </div>
         <div class="card-body">
           <form>
+          
            <div class="form-group">
-             <label for="mkid">Mkid</label>
-             <input type="text" id="mkid" name="mkid" [(ngModel)]="model.mkid" class="form-control">
-           </div>
+            <label for="mkid">Mkid</label>
+            <input type="text" class="form-control" name="mkid" id="mkid" [(ngModel)]="model.mkid" readonly>
+            </div>
 
            <div class="form-group">
-            <label for="marketName">marketName</label>
+            <label for="marketName">Market Name</label>
             <input type="text" id="marketName" name="marketName" [(ngModel)]="model.marketName" class="form-control">
           </div>
 
@@ -28,7 +29,7 @@
             <input type="text" id="address" name="address" [(ngModel)]="model.address" class="form-control">
           </div>
           <div class="form-group">
-            <label for="decisionMaker">DecisionMaker</label>
+            <label for="decisionMaker">Decision Maker</label>
             <input type="text" id="decisionMaker" name="decisionMaker" [(ngModel)]="model.decisionMaker" class="form-control">
           </div>
           <div class="form-group">
@@ -48,7 +49,7 @@
             <input type="text" id="email" name="email" [(ngModel)]="model.email" class="form-control">
           </div>
           <div class="form-group">
-            <label for="webSite">WebSite</label>
+            <label for="webSite">Website</label>
             <input type="text" id="webSite" name="webSite" [(ngModel)]="model.webSite" class="form-control">
           </div>
           <div class="form-group">
@@ -58,7 +59,6 @@
           <div class="form-group">
               <label for="statusId">Status: </label>
               <select id="statusId" name="statusId" [(ngModel)]="model.statusId" class="form-control">
-                <option value=""></option>
                 <option *ngFor="let status of statuses" value="{{status.id}}">{{status.text}}</option>
                 </select>
             </div>

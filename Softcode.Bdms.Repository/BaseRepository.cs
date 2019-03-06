@@ -14,6 +14,7 @@ namespace Softcode.Bdms.Repository
 
         public bool Add(T entity)
         {
+           
             DbSet<T> dbSet = this.context.Set<T>();//dbset konta chinai dilo ex
             dbSet.Add(entity);
             int i = context.SaveChanges();//how many rows will be effected
@@ -34,6 +35,8 @@ namespace Softcode.Bdms.Repository
             return this.context.Set<T>().Find(id);
 
         }
+
+       
 
         public bool Edit(T entity)
         {

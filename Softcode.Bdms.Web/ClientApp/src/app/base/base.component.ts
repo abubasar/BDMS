@@ -29,9 +29,13 @@ save(){
 get(){
   var id=this.activatedRoute.snapshot.params.id;
   this.service.get(id).subscribe(res=>{
+    console.log(res);
     this.model=res;
+
 });
 }
+
+
 
 edit(){
   this.service.edit(this.model).subscribe(res=>{

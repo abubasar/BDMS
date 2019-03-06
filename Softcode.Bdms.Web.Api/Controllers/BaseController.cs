@@ -29,6 +29,14 @@ namespace Softcode.Bdms.Web.Api.Controllers
             var searchResult = service.Search(request);
             return Ok(searchResult);
         }
+        [Route("reference-no")]
+        [HttpGet]
+        public IActionResult GetReferenceNo()
+        {
+            
+          string referenceNo = service.GetReferanceId();
+            return Ok(new { ReferenceNo=referenceNo});
+        }
         [HttpPost]
         [Route("add")]
         public IActionResult POST(T model)

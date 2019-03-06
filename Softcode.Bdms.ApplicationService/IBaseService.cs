@@ -18,5 +18,6 @@ namespace Softcode.Bdms.ApplicationService
         List<Tv> Search(Tr request);
         HashSet<DropdownViewModel> GetDropdownList(Tr request);
         bool Delete(int id);
+        string GetReferanceId();
     }
 }

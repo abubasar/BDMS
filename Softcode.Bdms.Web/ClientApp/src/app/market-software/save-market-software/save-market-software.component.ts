@@ -20,6 +20,7 @@ export class SaveMarketSoftwareComponent extends BaseComponent<MarketSoftware> i
 
   ngOnInit() {
    this.loadStatus();
+  this.generateReferenceId()
   }
 
   loadStatus():void{
@@ -30,8 +31,16 @@ export class SaveMarketSoftwareComponent extends BaseComponent<MarketSoftware> i
 
     }
 
+    generateReferenceId(){
+      this.service.generateReferenceId().subscribe(res=>{
+        console.log(res);
+       this.model.mkid=res.referenceNo;
+        
+    });
+    }
+
   reset():void {
-    
+    this.model=new MarketSoftware();
  
   }
 

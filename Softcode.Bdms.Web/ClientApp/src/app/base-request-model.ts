@@ -4,5 +4,6 @@ export class BaseRequestModel {
     page:number
     perPageCount:number
     keyword:string
+    referenceNo:string
     
 }

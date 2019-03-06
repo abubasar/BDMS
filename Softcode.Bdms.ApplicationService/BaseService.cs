@@ -34,7 +34,7 @@ namespace Softcode.Bdms.ApplicationService
 
         public bool Add(T model)
         {
-
+            
             return repository.Add(model);
         }
 
@@ -50,6 +50,23 @@ namespace Softcode.Bdms.ApplicationService
             return repository.GetDetail(id);
         }
 
+        public string GetReferanceId()
+        {
+           var referenceNo = "";
+           var queryable = repository.Get();
+            var list = queryable.ToList();
+            int count = list.Count();
+            while (true)
+            {
+                count++;
+                referenceNo = "M" + count.ToString().PadLeft(4, '0');
+                return referenceNo;
+            }
+            
+            
+        }
+
+
         public bool Delete(int id)
         {
 
@@ -58,7 +75,8 @@ namespace Softcode.Bdms.ApplicationService
 
         public Tv Detail(int id)
         {
-            T x = repository.GetDetail(id);
+             T x = repository.GetDetail(id);
+           
             if (x == null)
             //id vul disos can
             {
@@ -69,7 +87,7 @@ namespace Softcode.Bdms.ApplicationService
 
             return vm;
         }
-
+    
         public List<Tv> Search(Tr request)
         {
 
